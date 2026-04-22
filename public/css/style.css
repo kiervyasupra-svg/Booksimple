@@ -1,0 +1,156 @@
+:root {
+  /* Colors inspired by old-world libraries and premium stationery */
+  --leather: #2c1810;
+  --paper: #f9f6f0;
+  --brass: #b89150;
+  --ink: #1a1a1a;
+  --shelf-shadow: rgba(0, 0, 0, 0.15);
+  
+  /* The "Pro" Shadow: Multi-layered for physical weight */
+  --book-shadow: 
+    -1px 0 0 #d1d1d1, 
+    -2px 0 0 #fff, 
+    -3px 0 2px rgba(0,0,0,0.1),
+    2px 2px 15px rgba(0,0,0,0.1);
+}
+
+body {
+  background-color: #e8e2d6;
+  /* Subtle parchment texture */
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  font-family: 'Cormorant Garamond', 'Georgia', serif; /* Classic Serif for authority */
+  color: var(--ink);
+  margin: 0;
+  padding: 80px 20px;
+}
+
+/* --- The "Oak Table" Container --- */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 60px;
+  border-radius: 4px;
+  position: relative;
+  /* Simulating a thick stack of paper */
+  box-shadow: 
+    0 1px 1px rgba(0,0,0,0.1), 
+    0 10px 0 -5px #eee, 
+    0 10px 1px -4px rgba(0,0,0,0.1), 
+    0 20px 0 -10px #eee, 
+    0 20px 1px -9px rgba(0,0,0,0.1),
+    0 40px 100px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 2px double var(--leather);
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+
+/* --- Form: Premium Ledger Style --- */
+.form-group label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--brass);
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  width: 100%;
+  max-width: 400px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #d1d1d1;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  font-family: inherit;
+  transition: border-color 0.4s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--leather);
+}
+
+/* --- The "Wax Seal" Button --- */
+.btn-submit {
+  background: var(--leather);
+  color: var(--paper);
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 0 #1a0f0a; /* Physical button depth */
+}
+
+.btn-submit:hover {
+  background: #3d2419;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 #1a0f0a;
+}
+
+.btn-submit:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #1a0f0a;
+}
+
+/* --- Table: The "Library Catalog" --- */
+.product-table {
+  width: 100%;
+  margin-top: 60px;
+  border-collapse: collapse;
+}
+
+.product-table th {
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: var(--brass);
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.product-table td {
+  padding: 25px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s;
+}
+
+/* Creating the "Book Spine" effect on rows */
+.product-table tbody tr {
+  cursor: pointer;
+  background: white;
+  /* This creates a "left-edge" spine look */
+  box-shadow: var(--book-shadow);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-table tbody tr:hover {
+  transform: scale(1.02) translateX(10px);
+  z-index: 10;
+  background: #fffdf9;
+  border-left: 5px solid var(--brass);
+}
+
+/* Specific styling for prices to look like hand-inked tags */
+.price-tag {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #1a1a1a;
+  background: #f1f1f1;
+  padding: 4px 8px;
+  border-radius: 2px;
+}
